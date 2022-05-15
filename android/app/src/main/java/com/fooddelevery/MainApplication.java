@@ -1,5 +1,5 @@
 package com.fooddelevery;
-import com.oblador.vectoricons.VectorIconsPackage
+import com.oblador.vectoricons.VectorIconsPackage;
 
 import android.app.Application;
 import android.content.Context;
