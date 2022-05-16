@@ -1,12 +1,10 @@
 import React, {useState} from "react";
 import { View, Text, StyleSheet, StatusBar, Image, TextInput, TouchableOpacity } from 'react-native';
-import { Separator } from "../components"; 
+import { Separator, ToggleButton } from "../components"; 
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Featcher from "react-native-vector-icons/Feather";
 import { Colors, Fonts, Images } from "../contants";
 import { Display } from "../utils";
-import { useState } from 'react/cjs/react.production.min';
-
 
 const SigninScreen = ({navigation}) => {
      const [isPasswordShow, setPasswordShow] = useState(false)
@@ -60,6 +58,7 @@ const SigninScreen = ({navigation}) => {
           <Text></Text>
           <View style={styles.forgotPasswordContainer}>
               <View>
+                  <ToggleButton size={0.5}/>
                   <Text style={styles.rememberMeText}>Rememver me</Text>
               </View>
               <Text style={styles.forgotPasswordText}>Forget Password</Text>
@@ -71,11 +70,11 @@ const SigninScreen = ({navigation}) => {
               <Text style={styles.accountText}>
                   Don't have an account
               </Text>
-              <Text style={styles.signupText}>Sign Up</Text>
+              <Text style={styles.signupText} onPress={() => navigation.navigate('signup')}>Sign Up</Text>
           </View>
           <Text style={styles.orText}>OR</Text>
           <TouchableOpacity style={styles.facebookButton}>
-              <View>
+              <View style={styles.socialButtonsContainer}>
                   <View style={styles.signinButtonLogoContainer}>
                       <Image style={styles.signinButtonLogo} source={Images.FACEBOOK}/>
                   </View>
@@ -83,7 +82,7 @@ const SigninScreen = ({navigation}) => {
               </View>
           </TouchableOpacity>
           <TouchableOpacity style={styles.googleButton}>
-              <View>
+              <View style={styles.socialButtonsContainer}>
                   <View style={styles.signinButtonLogoContainer}>
                       <Image style={styles.signinButtonLogo} source={Images.GOOGLE}/>
                   </View>
