@@ -5,6 +5,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import Featcher from "react-native-vector-icons/Feather";
 import { Colors, Fonts, Images } from "../contants";
 import { Display } from "../utils";
+import ForgotPasswordScreen from "./ForgotPasswordScreen";
 
 const SigninScreen = ({navigation}) => {
      const [isPasswordShow, setPasswordShow] = useState(false)
@@ -61,7 +62,7 @@ const SigninScreen = ({navigation}) => {
                   <ToggleButton size={0.5}/>
                   <Text style={styles.rememberMeText}>Rememver me</Text>
               </View>
-              <Text style={styles.forgotPasswordText}>Forget Password</Text>
+              <Text style={styles.forgotPasswordText} onPress={() => navigation.navigate(ForgotPassword)}>Forget Password</Text>
           </View>
           <TouchableOpacity style={styles.signinButton}>
               <Text style={styles.signinButtonText}>Sign In</Text>
